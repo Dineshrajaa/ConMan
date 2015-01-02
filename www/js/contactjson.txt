@@ -1,0 +1,33 @@
+id
+rawId
+displayName
+ formatted
+ givenName
+ nickname
+phoneNumbers
+ type
+ value
+ id
+ pref
+emails
+ type
+ value
+ id
+ pref
+addresses
+ streetAddress
+ id
+ formatted
+ type
+ pref
+ims
+organizations
+birthday
+note
+categories
+urls
+
+
+
+
+

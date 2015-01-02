@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.dinesh.ConMan" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>ConMan</name>
+    <description>
+        An Simple Phonegap app to Fetch and Display all the Contacts.
+    </description>
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
+    </author>
+    <content src="index.html" />
+    <preference name="permissions" value="none" />
+    <preference name="phonegap-version" value="3.6.3" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="prerendered-icon" value="false" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="SplashScreenDelay" value="10000" />
+    <gap:plugin name="org.apache.cordova.contacts" />
+    
+    <icon src="icon.png" />
+    <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
+    <icon gap:platform="android" gap:qualifier="mdpi" src="res/icon/android/icon-48-mdpi.png" />
+    <icon gap:platform="android" gap:qualifier="hdpi" src="res/icon/android/icon-72-hdpi.png" />
+    <icon gap:platform="android" gap:qualifier="xhdpi" src="res/icon/android/icon-96-xhdpi.png" />
+   
+    <icon gap:platform="ios" height="57" src="res/icon/ios/icon-57.png" width="57" />
+    <icon gap:platform="ios" height="72" src="res/icon/ios/icon-72.png" width="72" />
+    <icon gap:platform="ios" height="114" src="res/icon/ios/icon-57-2x.png" width="114" />
+    <icon gap:platform="ios" height="144" src="res/icon/ios/icon-72-2x.png" width="144" />
+    
+    <!--ICON FOR ALL-->
+    <icon src="icon.png" />
+
+    <!--ICON FOR ios-->
+    <icon src="res/icon/ios/icon-60@3x.png" gap:platform="ios" width="180" height="180" />
+    <icon src="res/icon/ios/icon-60.png" gap:platform="ios" width="60" height="60" />
+    <icon src="res/icon/ios/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+    <icon src="res/icon/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="res/icon/ios/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+    <icon src="res/icon/ios/icon-40.png" gap:platform="ios" width="40" height="40" />
+    <icon src="res/icon/ios/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+
+    <!--ICONS FOR Android-->
+    <icon src="res/icon/android/ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+    <icon src="res/icon/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+    <icon src="res/icon/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+    <icon src="res/icon/android/xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+    
+
+    <!--SPLASH SCREEN FOR ALL-->
+    <gap:splash src="splash.jpeg" />
+    <!--SPLASH SCREEN FOR ios-->
+    <!-- iPhone and iPod touch -->
+    <gap:splash src="res/screen/ios/Default.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="res/screen/ios/Default@2x.jpeg" gap:platform="ios" width="640" height="960" />
+    <!-- iPhone 5 / iPod Touch (5th Generation) -->
+    <gap:splash src="res/screen/ios/Default-568h@2x.jpeg" gap:platform="ios" width="640" height="1136" />
+    <!--SPLASH SCREEN FOR Android-->
+    <gap:splash src="res/screen/android/ldpi.jpg" gap:platform="android" gap:qualifier="ldpi" />
+    <gap:splash src="res/screen/android/mdpi.jpg" gap:platform="android" gap:qualifier="mdpi" />
+    <gap:splash src="res/screen/android/hdpi.jpg" gap:platform="android" gap:qualifier="hdpi" />
+    <gap:splash src="res/screen/android/xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />    
+    <gap:splash src="res/screen/android/portrait-xxhdpi.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
+    
+    <access origin="*" />
+</widget>
