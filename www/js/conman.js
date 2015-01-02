@@ -32,6 +32,23 @@ $(document).ready(function(){
 		//Displays Native ContactPicker			
 			navigator.contacts.pickContact(onPick);
 		}
+		function findContact(){
+		//Find all the Contacts found in the Device
+			var options = new ContactFindOptions();
+			options.filter = "";
+			options.multiple = true;
+			filter = ["displayName"];
+			navigator.contacts.find(filter, foundContacts, onError, options);
+		}
+		function foundContacts(contacts){
+			for (var i=0; i<contacts.length; i++) {
+            alert(contacts[i].displayName);
+        }
+
+		}
+		function onError(contactError){
+			alert(contactError);
+		}
 		function infoShow(){
 		//Displays App Info
 			alert("ConMan"+"\n"+"Version-0.0.1"+"\n"+"Author-Dinesh Raja");
@@ -40,7 +57,8 @@ $(document).ready(function(){
 		
 		
 		$("#findbtn").tap(infoShow);//Involkes App Info
-		$("#pickbtn").tap(contactPicker);//Invokes ContactPicker
+		//$("#pickbtn").tap(contactPicker);//Invokes ContactPicker
+		$("#pickbtn").tap(findContact);
 	});
 //Loaded all the DOM Elements
 });
