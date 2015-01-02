@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	document.addEventListener('deviceready',function(){
 		
-		function onPick(contact){
+		/*function onPick(contact){
 		//Called when Contact Selected
 			
 			var contactData="Selected Contact Details:"+"\n";//String Variable to store the details read from Contact
@@ -31,7 +31,8 @@ $(document).ready(function(){
 		function contactPicker(){
 		//Displays Native ContactPicker			
 			navigator.contacts.pickContact(onPick);
-		}
+		} */
+
 		function findContact(){
 		//Find all the Contacts found in the Device
 			var options = new ContactFindOptions();
@@ -41,10 +42,35 @@ $(document).ready(function(){
 			navigator.contacts.find(filter, foundContacts, onError, options);
 		}
 		function foundContacts(contacts){
-			for (var i=0; i<contacts.length; i++) {
-            alert(contacts[i].displayName);
+			for (var i=0; i<contacts.length; i++) {            
+            $("#contactList").append("<li id="+i+"><a href='#'>"+contacts[i].displayName+"</a></li>");
+            $("#contactList").listview("refresh");
         }
-
+		}
+		function readContact(searchedContact){			
+			var options      = new ContactFindOptions();
+			options.filter   = searchedContact;
+			var fields       = ["displayName"];
+			navigator.contacts.find(fields, viewContact, onError, options);
+		}
+		function viewContact(contacts){
+			var contactData="Selected Contact Details:";
+			contactData+="Name: "+contacts[0].displayName;
+			if (contacts[0].phoneNumbers && contacts[0].phoneNumbers[0].type=="mobile") {
+				//Checks Whether the Contact have Mobile Number and append the First one to String
+				contactData+="Mobile: "+contacts[0].phoneNumbers[0].value+"<br/>";
+			}
+			if (contacts[0].emails) {
+				//Checks Whether the Contact have an Email and append the First one to String
+				contactData+="Email: "+contacts[0].emails[0].value+"<br/>";
+			}
+			if (contacts[0].addresses) {
+				//Checks Whether the Contact have an Address and append that to String
+				contactData+="Address: "+contacts[0].addresses[0].formatted+"<br/>";
+			} 
+			//alert(contactData);
+			$(":mobile-pagecontainer").pagecontainer("change","#info-page");
+			$("#dataBanner").html(contactData);
 		}
 		function onError(contactError){
 			alert(contactError);
@@ -54,7 +80,10 @@ $(document).ready(function(){
 			alert("ConMan"+"\n"+"Version-0.0.1"+"\n"+"Author-Dinesh Raja");
 		}
 
-		
+		$(document).on("click","#contactList li",function(){
+			//viewContact($(this).attr('id'));
+			readContact($(this).text());
+		});
 		
 		$("#findbtn").tap(infoShow);//Involkes App Info
 		//$("#pickbtn").tap(contactPicker);//Invokes ContactPicker
