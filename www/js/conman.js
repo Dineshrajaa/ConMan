@@ -40,8 +40,7 @@ $(document).ready(function(){
 			if (contacts[0].addresses) {
 				//Checks Whether the Contact have an Address and append that to String
 				contactData+="Address: "+contacts[0].addresses[0].formatted+"<br/>";
-			} 
-			//alert(contactData);
+			} 			
 			$(":mobile-pagecontainer").pagecontainer("change","#info-page");
 			$("#dataBanner").html(contactData);
 		}
@@ -59,7 +58,7 @@ $(document).ready(function(){
 		});
 		
 		$("#infobtn").tap(infoShow);//Involkes App Info
-		//$("#pickbtn").tap(contactPicker);//Invokes ContactPicker
+		//$("#pickbtn").tap(contactPicker);//Invokes ContactPicker(Removed)
 		$("#pickbtn").tap(findContact);
 	});
 //Loaded all the DOM Elements
