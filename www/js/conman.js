@@ -1,6 +1,7 @@
 $(document).ready(function(){
-	document.addEventListener('deviceready',function(){		
+	document.addEventListener('deviceready',function(){	
 		
+		StatusBar.show();
 		//Function Declarations
 		function findContact(){
 		//Find all the Contacts found in the Device

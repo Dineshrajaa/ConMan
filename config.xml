@@ -4,8 +4,8 @@
     <description>
         An Simple Phonegap app to Fetch and Display all the Contacts.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="dineshkumar.r@cgvakindia.com" href="http://phonegap.com">
+        Dinesh Raja
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />
@@ -25,7 +25,10 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <preference name="SplashScreenDelay" value="10000" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <!--Plugins-->
     <gap:plugin name="org.apache.cordova.contacts" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
     
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
